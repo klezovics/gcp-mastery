@@ -42,6 +42,6 @@ tasks.withType<Test> {
 }
 
 tasks.bootBuildImage {
-    imageName.set("gcr.io/ak-gcp-test/spring-base:latest")
+    imageName.set("gcr.io/ak-gcp-test/spring-base")
     publish = true // Set to true to publish the image to the configured registry
 }
