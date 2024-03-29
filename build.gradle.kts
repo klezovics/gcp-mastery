@@ -30,10 +30,19 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
+
 tasks.withType<KotlinCompile> {
     kotlinOptions {
         freeCompilerArgs += "-Xjsr305=strict"
         jvmTarget = "17"
+    }
+}
+
+tasks {
+    val bootJar by getting(org.springframework.boot.gradle.tasks.bundling.BootJar::class)
+
+    bootJar {
+        archiveFileName.set("app.jar")
     }
 }
 
